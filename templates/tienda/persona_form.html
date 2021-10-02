@@ -1,0 +1,53 @@
+ {% extends 'base.html' %}
+ {% load static %}
+ {% block titulo_pagina %}Administrador de personas {% endblock %}
+ {% block titulo_principal %}Administrador de personas{% endblock %}
+
+ {% block pricipal %}
+    <form method="post" enctype="multipart/form-data" novalidate="">
+        {% csrf_token %}
+        <h1 class="display-6">Persona</h1>
+        <div class="col-5 maincontent">
+            <div class="row">
+                <div class="col-xs.2">
+                    {{ form.nombre.label }} {{ form.nombre }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs.2">
+                    {{ form.apellido.label }} {{ form.apellido }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs.2">
+                    {{ form.num_doc.label }} {{ form.num_doc }}
+                </div>
+            </div>
+             <div class="row">
+                <div class="col-xs.2">
+                    {{ form.mails.label }} {{ form.mails }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs.2">
+                    {{ form.telefono.label }} {{ form.telefono }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs.2">
+                     {{ form.fecha_nac.label }} <br> {{ form.fecha_nac }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs.2">
+                    {{ form.localidad.label }} {{ form.localidad }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs.2">
+                    <br><input type="submit" name="submit" value="Grabar" class="btn btn-primary" >
+                </div>
+            </div>
+        </div>
+    </form>
+  {% endblock %}

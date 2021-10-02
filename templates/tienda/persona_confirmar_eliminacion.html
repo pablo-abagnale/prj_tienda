@@ -1,0 +1,12 @@
+ {% extends 'base.html' %}
+ {% load static %}
+ {% block titulo_pagina %}Eliminar persona {% endblock %}
+ {% block titulo_principal %}Esta  por eliminar una persona{% endblock %}
+
+ {% block pricipal %}
+        <form method="POST">
+            {% csrf_token %}
+            <h6>¿Esta seguro que desea eliminar a {{ form.legajo }} {{ form.apellido }}? </h6>
+            <input type="submit" value="Confirmar" class="btn btn-danger">
+        </form>
+ {% endblock %}

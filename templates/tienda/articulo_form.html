@@ -1,0 +1,51 @@
+ {% extends 'base.html' %}
+ {% load static %}
+ {% block titulo_pagina %}Administrador de articulos  {% endblock %}
+ {% block titulo_principal %}Administrador de articulos {% endblock %}
+ {% block pricipal %}
+<div class="container">
+    <form method="post" enctype="multipart/form-data" novalidate="">
+        {% csrf_token %}
+        <h1 class="display-6">Articulo</h1>
+        <div class="col-5 maincontent">
+            <div class="row">
+                <div class="col-xs.2">
+                    {{ form.nombre.label }} {{ form.nombre }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs.2">
+                    {{ form.marca.label }} {{ form.marca }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs.2">
+                    {{ form.categoria.label }} {{ form.categoria }}
+                </div>
+            </div>
+             <div class="row">
+                <div class="col-xs.2">
+                    {{ form.descripcion.label }} {{ form.descripcion }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs.2">
+                    {{ form.precio.label }} {{ form.precio }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs.2">
+                     {{ form.stock.label }} <br> {{ form.stock }}
+                </div>
+            </div>
+
+            <!--BOTON-->
+            <div class="row">
+                <div class="col-xs.2">
+                    <br><input type="submit" name="submit" value="Grabar" class="btn btn-primary" >
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+ {% endblock %}

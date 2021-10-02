@@ -1,0 +1,12 @@
+ {% extends 'base.html' %}
+ {% load static %}
+ {% block titulo_pagina %}Eliminar Articulo {% endblock %}
+ {% block titulo_principal %}Esta  por eliminar un articulo{% endblock %}
+
+ {% block pricipal %}
+        <form method="POST">
+            {% csrf_token %}
+            <h6>¿Esta seguro que desea eliminar el articulo? </h6>
+            <input type="submit" value="Confirmar" class="btn btn-danger">
+        </form>
+ {% endblock %}

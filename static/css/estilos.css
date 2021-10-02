@@ -1,0 +1,22 @@
+#eliminar{
+    color: red;
+    font-size: 15px;
+}
+#eliminar:hover{
+    font-size: 16px;
+}
+
+#modificar{
+    font-size: 15px;
+}
+#modificar:hover{
+    font-size: 16px;
+}
+#btn{
+    text-decoration: none;
+    color: aqua;
+}
+#btn:hover{
+    text-decoration: none;
+    color: black;
+}

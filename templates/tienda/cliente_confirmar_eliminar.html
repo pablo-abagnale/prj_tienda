@@ -1,0 +1,12 @@
+ {% extends 'base.html' %}
+ {% load static %}
+ {% block titulo_pagina %}Eliminar cliente {% endblock %}
+ {% block titulo_principal %}Esta  por eliminar un Cliente{% endblock %}
+
+ {% block pricipal %}
+        <form method="POST">
+            {% csrf_token %}
+            <h6>¿Esta seguro que desea eliminar a {{ form.nombre }} {{ form.apellido }}? </h6>
+            <input type="submit" value="Confirmar" class="btn btn-danger">
+        </form>
+ {% endblock %}

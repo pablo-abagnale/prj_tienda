@@ -1,0 +1,24 @@
+ {% extends 'base.html' %}
+ {% load static %}
+ {% block titulo_pagina %}Index {% endblock %}
+ {% block titulo_principal %}Projec Tienda {% endblock %}
+
+  {% block pricipal %}
+  <div class="bg-dark text-secondary px-4 py-5 text-center">
+    <div class="py-5">
+      <h1 class="display-5 fw-bold text-white">Administrador</h1>
+      <div class="col-lg-6 mx-auto">
+        <p class="fs-5 mb-4">Bienvenidos al sistema de administración de Projec Tienda. Desde este menú puede acceder a los listados de las usuarios, clientes, empleados y productos donde vas a poder verlos, editarlos o eliminarlos, para crear usa el menú de la parte superior </p>
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+
+          <button type="button" class="btn btn-outline-info btn-lg px-4 me-sm-3 fw-bold"> <a id="btn" href="{% url "Persona_listar"  %}">Personas</a> </button>
+          <button type="button" class="btn btn-outline-info btn-lg px-4 me-sm-3 fw-bold"> <a id="btn" href="{% url "Cliente_listar"  %}">Clientes</a> </button>
+          <button type="button" class="btn btn-outline-info btn-lg px-4 me-sm-3 fw-bold"> <a id="btn" href="{% url "Empleado_listar"  %}">Empleados</a> </button>
+          <button type="button" class="btn btn-outline-info btn-lg px-4 me-sm-3 fw-bold"> <a id="btn" href="{% url "Articulos_lista"  %}">Articulos</a> </button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+ <script src="/docs/5.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+  {% endblock %}

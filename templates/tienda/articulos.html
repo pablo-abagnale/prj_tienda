@@ -1,0 +1,30 @@
+ {% extends 'base.html' %}
+ {% load static %}
+ {% block titulo_pagina %}Administrador de articulos {% endblock %}
+ {% block titulo_principal %}Administrador de articulos{% endblock %}
+ {% block titulo_secundario %}Listado de articulos  {% endblock %}
+ {% block pricipal %}
+                <table class="table table-dark table-striped">
+                    <thead>
+                        <tr>
+                            <td>Nombre</td>
+                            <td>Marca</td>
+                            <td>Precio</td>
+                            <td>Categoria</td>
+                            <td class="text-center">Modificar</td>
+                            <td class="text-center">Eliminar</td>
+                        </tr>
+                    </thead>
+                    {% for articulo in articulos %}
+                        <tr>
+                            <td>{{ articulo.nombre }}</td>
+                            <td>{{ articulo.marca }}</td>
+                            <td>$ {{ articulo.precio }}</td>
+                            <td>{{ articulo.categoria }}</td>
+                             <td class="text-center"> <a href="{% url "modificar_articulo" articulo.id %}" > <i id="modificar"  class="fas fa-edit"></i> </i></a> </td>
+                             <td class="text-center"> <a href="{% url "eliminar_articulo" articulo.id %}" > <i id="eliminar"  class="fas fa-trash-alt"></i> </i></a> </td>
+                        </tr>
+                    {% endfor %}
+                </table>
+
+  {% endblock %}

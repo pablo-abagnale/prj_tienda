@@ -1,0 +1,28 @@
+ {% extends 'base.html' %}
+ {% load static %}
+ {% block titulo_pagina %}Administrador de personas {% endblock %}
+ {% block titulo_principal %}Administrador de personas{% endblock %}
+ {% block titulo_secundario %}Listado de Empleados  {% endblock %}
+ {% block pricipal %}
+                <table class="table table-dark table-striped">
+                    <thead>
+                        <tr>
+                            <td>Nombre</td>
+                            <td>Apellido</td>
+                            <td>Legajo</td>
+                            <td class="text-center">Modificar</td>
+                            <td class="text-center">Eliminar</td>
+                        </tr>
+                    </thead>
+                    {% for empleado in empleados %}
+                        <tr>
+                            <td>{{ empleado.persona.nombre }}</td>
+                            <td>{{ empleado.persona.apellido }}</td>
+                            <td>{{ empleado.legajo }}</td>
+                            <td class="text-center"> <a href="{% url "modificar_empleado" empleado.legajo %}" > <i id="modificar"  class="fas fa-user-edit"> </i></a> </td>
+                            <td class="text-center"> <a href="{% url "eliminar_empleado" empleado.legajo %}" > <i id="eliminar"  class="fas fa-trash-alt"></i> </i></a> </td>
+
+                        </tr>
+                    {% endfor %}
+                </table>
+ {% endblock %}

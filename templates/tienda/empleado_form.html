@@ -1,0 +1,33 @@
+ {% extends 'base.html' %}
+ {% load static %}
+ {% block titulo_pagina %}Administrador de personas {% endblock %}
+ {% block titulo_principal %}Administrador de Empleados{% endblock %}
+
+ {% block pricipal %}
+    <form method="post" enctype="multipart/form-data" novalidate="">
+        {% csrf_token %}
+        <h1 class="display-6">Empleado</h1>
+        <div class="col-5 maincontent">
+            <div class="row">
+                <div class="col-xs.2">
+                    {{ form.persona.label }} {{ form.persona }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs.2">
+                     {{ form.legajo.label }} <br> {{ form.legajo }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs.2">
+                    {{ form.cargo.label }}<br> {{ form.cargo }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs.2">
+                    <br><input type="submit" name="submit" value="Grabar" class="btn btn-primary" >
+                </div>
+            </div>
+        </div>
+    </form>
+  {% endblock %}

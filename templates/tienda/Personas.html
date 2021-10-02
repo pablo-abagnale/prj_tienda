@@ -1,0 +1,28 @@
+ {% extends 'base.html' %}
+ {% load static %}
+ {% block titulo_pagina %}Administrador de personas {% endblock %}
+ {% block titulo_principal %}Administrador de personas{% endblock %}
+ {% block titulo_secundario %}Listado de personas  {% endblock %}
+ {% block pricipal %}
+                <table class="table table-dark table-striped">
+                    <thead>
+                        <tr>
+                            <td>Apellido</td>
+                            <td>Nombre</td>
+                            <td>Localidad</td>
+                            <td class="text-center">Modificar</td>
+                            <td class="text-center">Eliminar</td>
+                        </tr>
+                    </thead>
+                    {% for persona in personas %}
+                        <tr>
+                            <td>{{ persona.apellido }}</td>
+                            <td>{{ persona.nombre }}</td>
+                            <td>{{ persona.localidad }}</td>
+                            <td class="text-center"> <a href="{% url "modificar_persona" persona.num_doc %}" > <i id="modificar"  class="fas fa-user-edit"> </i></a> </td>
+                            <td class="text-center"> <a href="{% url "eliminar_persona" persona.num_doc %}" > <i id="eliminar"  class="fas fa-trash-alt"></i> </i></a> </td>
+
+                        </tr>
+                    {% endfor %}
+                </table>
+  {% endblock %}
