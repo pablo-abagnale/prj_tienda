@@ -6,6 +6,24 @@
  {% block pricipal %}
     <form method="post" enctype="multipart/form-data" novalidate="">
         {% csrf_token %}
+
+        {% if form.errors %}
+        <!--Mensajes de error -->
+        <div class="alert alert-danger">
+            <p>Hay errores en los datos ingresados. Por Favor, verificar: </p>
+            {{ form.non_field_errors }}
+            <ul>
+                {% for field in form %}
+                    {% if field.errors %}
+                        <li>{{ field.label }} : {{ field.errors|striptags }}</li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+
+        {% endif %}
+
+
         <h1 class="display-6">Persona</h1>
         <div class="col-5 maincontent">
             <div class="row">

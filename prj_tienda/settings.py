@@ -20,13 +20,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = ''
+SECRET_KEY = 'django-insecure-5da7^r4l_49_co9=r@xuq50@gn*$j-mk%^i&2ja)nw)rx5))ih'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['pabloabagnale.pythonanywhere.com']
 
+ALLOWED_HOSTS = []
+#ALLOWED_HOSTS = ['pabloabagnale.pythonanywhere.com']
 
 # Application definition
 
@@ -76,10 +77,10 @@ WSGI_APPLICATION = 'prj_tienda.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'pabloabagnale.mysql.pythonanywhere-services.com',
-        'NAME': 'pabloabagnale$default',
-        'USER': 'pabloabagnale',
-        'PASSWORD': '',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'tiendavirtual_db',
+        'USER': 'Admin_tienda',
+        'PASSWORD': 'qwerty',
     }
 }
 
@@ -121,8 +122,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-#STATICFILES_DIRS = [BASE_DIR / 'static']
-STATIC_ROOT ='	/home/pabloabagnale/project/static'
+STATICFILES_DIRS = [BASE_DIR / 'static']
+#STATIC_ROOT ='	/home/pabloabagnale/project/static'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

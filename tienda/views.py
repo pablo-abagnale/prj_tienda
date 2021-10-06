@@ -43,6 +43,8 @@ def nueva_persona(request,template_name='tienda/persona_form.html'):
         if form.is_valid():
             form.save(commit=True)
             return redirect('Persona_listar')
+        else:
+            print(form.errors)
     else:
         form = PersonaFrom()
     dato={"form":form}
